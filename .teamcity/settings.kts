@@ -40,6 +40,17 @@ object Build : BuildType({
 
     steps {
         script {
+            name = "Copy Sencha framework"
+            scriptContent = "Expand-Archive -Path C:\\Websites\\Default\\downloads\\ExtJS\\7.0.0\\oub6fde4 -DestinationPath .\\"
+        }
+
+        script {
+            name = "Rename framework folder"
+            scriptContent = "Rename-Item .\\ext-7.0.0.156 ext"
+        }
+
+        script {
+            name = "Sencha production build"
             scriptContent = "sencha app build production"
         }
     }
