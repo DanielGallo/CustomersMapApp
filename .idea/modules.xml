@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/CustomersMapApp.iml" filepath="$PROJECT_DIR$/.idea/CustomersMapApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.teamcity/CustomersMapApp_dsl.iml" filepath="$PROJECT_DIR$/.teamcity/CustomersMapApp_dsl.iml" />
+    </modules>
+  </component>
+</project>
