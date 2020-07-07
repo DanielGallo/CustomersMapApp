@@ -42,6 +42,7 @@ object Build : BuildType({
     steps {
         powerShell {
             name = "Copy Sencha framework"
+            minRequiredVersion = "7"
             scriptMode = script {
                 content = "Expand-Archive " +
                         "-Path C:\\Websites\\Default\\downloads\\ExtJS\\7.0.0\\oub6fde4 " +
@@ -51,6 +52,7 @@ object Build : BuildType({
 
         powerShell {
             name = "Rename framework folder"
+            minRequiredVersion = "7"
             scriptMode = script {
                 content = "Rename-Item .\\ext-7.0.0.156 ext"
             }
@@ -58,6 +60,7 @@ object Build : BuildType({
 
         powerShell {
             name = "Sencha production build"
+            minRequiredVersion = "7"
             scriptMode = script {
                 content = "sencha app build production"
             }
