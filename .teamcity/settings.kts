@@ -65,7 +65,18 @@ object Build : BuildType({
                 content = "sencha app build production"
             }
         }
+
+        powerShell {
+            name = "Zip production build"
+            minRequiredVersion = "7"
+            workingDir = ".\\build\\production\\MyApp"
+            scriptMode = script {
+                content = "Compress-Archive -Path .\\ -DestinationPath ..\\CustomersMapApp.zip"
+            }
+        }
     }
+
+    artifactRules = ".\\build\\production\\CustomersMapApp.zip"
 
     triggers {
         vcs {
