@@ -1,4 +1,5 @@
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
+import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.powerShell
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.vcs
 
@@ -39,19 +40,27 @@ object Build : BuildType({
     }
 
     steps {
-        script {
+        powerShell {
             name = "Copy Sencha framework"
-            scriptContent = "Expand-Archive -Path C:\\Websites\\Default\\downloads\\ExtJS\\7.0.0\\oub6fde4 -DestinationPath .\\"
+            scriptMode = script {
+                content = "Expand-Archive " +
+                        "-Path C:\\Websites\\Default\\downloads\\ExtJS\\7.0.0\\oub6fde4 " +
+                        "-DestinationPath .\\"
+            }
         }
 
-        script {
+        powerShell {
             name = "Rename framework folder"
-            scriptContent = "Rename-Item .\\ext-7.0.0.156 ext"
+            scriptMode = script {
+                content = "Rename-Item .\\ext-7.0.0.156 ext"
+            }
         }
 
-        script {
+        powerShell {
             name = "Sencha production build"
-            scriptContent = "sencha app build production"
+            scriptMode = script {
+                content = "sencha app build production"
+            }
         }
     }
 
