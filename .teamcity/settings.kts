@@ -45,7 +45,7 @@ object Build : BuildType({
             minRequiredVersion = "7"
             scriptMode = script {
                 content = "Expand-Archive " +
-                        "-Path C:\\Websites\\Default\\downloads\\ExtJS\\7.0.0\\oub6fde4 " +
+                        "-Path C:\\Assets\\ExtJS\\ext-7.0.0.zip " +
                         "-DestinationPath .\\"
             }
         }
