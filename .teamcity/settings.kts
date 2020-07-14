@@ -23,7 +23,7 @@ object Build : BuildType({
             Copy across the Ext JS framework files from the master Assets folder
          */
         powerShell {
-            name = "Copy Sencha framework"
+            name = "Copy Sencha framework from root folder"
             formatStderrAsError = true
             minRequiredVersion = "7"
             scriptMode = script {
